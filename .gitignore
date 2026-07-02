@@ -1,0 +1,7 @@
+# Haskell
+.stack-work/
+dist-newstyle
+
+# Nix
+.direnv/
+result
