@@ -1,6 +1,6 @@
 # Инструкции за ползване на `git` за нуждите на курса
 
-# Не `push`-вайте в `main` - това ще го правя само аз. Вашите промени минават през pull request-и.
+# В личните си хранилища може спокойно да `commit`-вате и `push`-вате в `master`. Pull request-и ще получавате от мен при обновяване на материалите или обратна връзка.
 
 ## Ресурси за `git`
 
@@ -23,41 +23,29 @@
 
 ## Основно "In Class" хранилище
 
-Създайте вашето хранилище:
+Първо ми изпратете GitHub потребителското си име на лично съобщение в Discord. Ще създам вашето хранилище и ще ви кажа, когато е готово.
 
-Навигирайте до [страницата на курса][github-classrooms] на GitHub Classrooms за тазгодишното издание на курса, а оттам до `inclass-20XX-XX` заданието (вероятно [тук][github-classrooms-inclass])). Там ще намерите бутон за "приемане" на "заданието" (`inclass` нещата съм ги моделирал като домашно без краен срок) - той автоматично ще си създаде копие на репото, в което аз мажа по време на час.
-
-Клонирайте вашето хранилище:
+То се казва `in-class-2026-27-ВАШЕТО_GITHUB_ИМЕ`. Клонирайте го:
 
 ```sh
 # ssh клониране
-git clone git@github.com:fmi-fp-lab/inclass-20XX-XX-ВАШЕТО_GITHUB_ИМЕ.git
+git clone git@github.com:fmi-fp-lab/in-class-2026-27-ВАШЕТО_GITHUB_ИМЕ.git
 # HTTPS клониране
-git clone https://github.com/fmi-fp-lab/inclass-20XX-XX-ВАШЕТО_GITHUB_ИМЕ.git
+git clone https://github.com/fmi-fp-lab/in-class-2026-27-ВАШЕТО_GITHUB_ИМЕ.git
 ```
 
 > [!TIP]
-> Може да си прекръстите локалната папка да не се казва `inclass-20XX-XX-ВАШЕТО_GITHUB_ИМЕ`
+> Може да си прекръстите локалната папка.
 
-В това хранилище можете спокойно да си мажете и commit-push-вате на `master`, а при ъпдейт от моя страна (най-често в края на лекционната част на упражнението и/или ако нещо съм осрал и съм пушнал следварително, че да го оправя) аз ще ви пусна автоматични [pull request][github-prs]-и, които можете (вие или аз, според зависи) да си merge-нете във вашите хранилища, че да придобиете достъп до новите нещица (и оптимално запазвайки старите си ваши промени, най-често по `.hs` файловете за съответното упражнение).
+В това хранилище можете спокойно да си мажете, `commit`-вате и `push`-вате в `master`. Когато обновя материалите, ще получите pull request от мен. Merge-нете го, за да получите следващото упражнение или решенията, като същевременно запазите собствените си промени.
 
 ## Домашни и проект
 
-Абсолютно същата идея и процес както при `In Class` хранилището, само дето в [страницата на курса][github-classrooms] ще потърсите съотвеното задание за въпросното домашно (или проект). Оттам нататък процесът е същият.
+Когато публикувам домашно или проект, ще създам лично GitHub хранилище за вас и ще ви дам достъп. Клонирайте го и си мажете по същия начин: `add`, `commit`, `push` в `master`, често.
 
-Единствена разлика е, че GitHub автомагически ще ви отвори [pull request][github-prs]-и, в които ще можем да си комуникираме по вашият код, като е хубаво този процес да почне възможно най-рано, че да може по-малко време да сте забили ако нещо не върви (TLDR - често commit-вайте и push-вайте)
+Преди крайния срок мога да ви дам обратна връзка в pull request или коментари. Когато срокът приключи, хранилището се затваря за нови промени; предадено е това, което е било push-нато дотогава.
 
-> [!NOTE]
-> Кодът push-ван по време на работа, **не е финалното предаване на домашното** и е напълно очаквано, преди крайния срок за домашното, да ви пиша коментари по pull request-а, на които вие да отговаряте или със собствени ваши коментари, или оправяйки кода си.
-
-Най-често тези коментари са
-* "яко, защото X"
-* "това е ок и ще ти дам точки за него, но може и по-добре, защото X"
-* "това не е правилно и няма да получиш точки за него, защото X"
-
-Когато приключи срокът за домашното може да спрете да бутате нови неща в хранилището (а и няма и да гледам неща бутнати след крайния срок, освен ако нямате някаква основателна причина да не сте успели да направите всичко до преди крайният срок).
-
-След като се появи ново домашно (или проект), може да започнете отначало стъпките за решаване му.
+След като се появи ново домашно или проект, ще получите ново лично хранилище.
 
 ## TLDR
 
@@ -135,8 +123,5 @@ git config --global merge.conflictstyle diff3
 [git-book]: https://git-scm.com/book/en/v2
 [ssh-keygen]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
 [github-ssh-add]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-[github-classrooms]: https://classroom.github.com/classrooms/TODO-fmi-fp-lab-20XX-XX-classroom/assignments/inclass-20XX-XX
-[github-classrooms-inclass]: https://classroom.github.com/classrooms/TODO-fmi-fp-lab-20XX-XX-classroom/assignments/inclass-20XX-XX
 [github-prs]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[github-create-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 [git-switch]: https://github.blog/2019-08-16-highlights-from-git-2-23/#experimental-alternatives-for-git-checkout
