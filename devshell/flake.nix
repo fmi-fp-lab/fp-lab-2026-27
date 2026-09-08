@@ -1,5 +1,5 @@
 {
-  description = "FP lab 20XX/XX";
+  description = "FP lab 2026/27";
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     systems = [
@@ -11,7 +11,7 @@
     ];
 
     perSystem = { lib, pkgs, system, ... }: let
-      hsPkgs = pkgs.haskell.packages."ghc947";
+      hsPkgs = pkgs.haskell.packages."ghc912";
 
       buildInputs = [
         hsPkgs.ghc
