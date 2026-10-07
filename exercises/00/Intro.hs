@@ -47,6 +47,15 @@ module Intro where
 -- no null everywhere!
 -- sum types
 
+data Kozunak = SysStafidi Int Int
+
+-- struct Kozunak { int a; int b; }
+
+data Kozunak2 = A Int | B Bool
+
+-- union { int a; bool b; }
+-- int tag;
+
 -- pattern matching!
 -- higher-order functions!
 -- lazy - a boon and a curse
@@ -99,8 +108,13 @@ module Intro where
 -- operators
 -- holes
 
--- show HLS features:
+-- a :: Int
+-- a = 1
+--
+-- funkciq :: Int -> Int
+-- funkciq b = b
 
+-- show HLS features:
 -- warnings
 fun1 :: Int -> Int
 fun1 x = 10 + 3
@@ -122,12 +136,23 @@ fun4 x c y =
 
 -- evaluate code in >>>
 
+f :: Integer -> (Integer -> Integer)
+-- f x y = x + y
+-- f x = \y -> x + y
+f = \x -> \y -> x + y
+-- >>> ((f 1) 2)
+-- f = \x -> x + 5
+
 -- >>> 5 + 15 + 100
+-- 120
 
 -- TODO: show
 -- if-then-else (is an expression)
 -- numeric operations
 -- function application
+
+-- P ? T : F
+-- if P then T else F
 
 -- Explain undefined vs _
 -- Explain "taking arguments" (via c style sigs)
@@ -136,8 +161,11 @@ fun4 x c y =
 -- >>> fact 7
 -- 5040
 
+-- int fact(int);
+-- int fact(int x) {}
+
 fact :: Integer -> Integer
-fact = undefined
+fact x = if x < 2 then 1 else x * fact (x - 1)
 
 -- 3 + 4 * 7
 
@@ -154,7 +182,7 @@ fact = undefined
 -- 21
 
 fib :: Integer -> Integer
-fib = undefined
+fib x = if x < 2 then x else fib (x - 1) + fib (x - 2)
 
 -- use the following "mathematical definition" to implement addition on natural numbers:
 -- myPlus x y = { y                        | x == 0    }
