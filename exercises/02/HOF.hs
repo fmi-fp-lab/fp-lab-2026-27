@@ -114,10 +114,6 @@ infixr 0 $
 
 -- (1 + 2) $ (3 * 4) $
 
-(.) :: (b -> c) -> (a -> b) -> a -> c
-(.) f g a = f $ g a
-infixr 6 .
-
 -- >>> g $ l (j (w (g (g (f x)))))
 -- >>> print $ g (l (j (w (g (g
 --
@@ -191,20 +187,6 @@ compose f g x = f (g x)
 (.) :: (b -> c) -> (a -> b) -> a -> c
 (.) = compose
 
--- >>> let f = (*5) . (+5) in f 4
--- 45
-
--- Wild UTF8 operator names
-(∘) :: (b -> c) -> (a -> b) -> a -> c
-(∘) = (.)
-
--- Correct only for 1/4th, kek
-(√) :: Integer -> Integer
-(√) x = x * 2
-
--- >>> ((*2) ∘ (+1)) 3
--- 8
-
 -- TASK:
 -- Iterate a function f n times over a base value x.
 
@@ -264,7 +246,7 @@ uncurry = undefined
 -- 59
 
 on :: (b -> b -> c) -> (a -> b) -> a -> a -> c
-on = join . ((flip . ((.) .)) .) . (.)
+on = undefined
 
 -- TASK:
 -- Execute a function, until the result starts sastifying a given predicate
@@ -273,11 +255,7 @@ on = join . ((flip . ((.) .)) .) . (.)
 -- 1372
 
 until :: (a -> Bool) -> (a -> a) -> a -> a
--- until p f x = if p x then x else until p f (f x)
-until = fix (ap ((.) . ap . (if' =<<)) . flip flip id . (liftM2 (.) .))
-
-if' :: Bool -> a -> a -> a
-if' p x y = if p then x else y
+until = undefined
 
 -- TASK:
 -- Apply two different functions to the two different arguments of a tuple
