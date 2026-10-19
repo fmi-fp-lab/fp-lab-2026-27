@@ -102,6 +102,12 @@ append xs ys = foldr ys (:) xs
 -- >>> append [1,2,3] [4,5,6]
 -- [1,2,3,4,5,6]
 
+integerToNat :: Integer -> Nat
+integerToNat n =
+  if n == 0
+  then Zero
+  else Succ (integerToNat (n - 1))
+
 -- TASK:
 -- Implement natToInteger using foldNat.
 
